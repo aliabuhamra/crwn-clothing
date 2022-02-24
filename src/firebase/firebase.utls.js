@@ -62,6 +62,9 @@ export const signInWithGoogle = () => {
         }).catch((error) => {
             // Handle Errors here.
             console.error(error);
+            // there was an error here if you click the close button above 
+            // we get error here FirebaseError: Firebase: Error (auth/popup-closed-by-user).
+            // The sloution error is  it appears the solution is to add the app domain to the list of authorized domains
         }
         )
 }
