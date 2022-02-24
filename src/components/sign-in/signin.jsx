@@ -8,8 +8,8 @@ import { signInWithGoogle } from "../../firebase/firebase.utls";
 // import firebase from "../../firebase";
 
 class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       email: "",
       password: "",
@@ -24,7 +24,6 @@ class SignIn extends React.Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.value);
     event.preventDefault();
     this.setState({ email: "", password: "" });
   }
@@ -32,7 +31,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className="sign-in">
-        <h2>I already have an account</h2>
+        <h2 className="title">I already have an account</h2>
         <span>Sign In with your email and password</span>
         <form onSubmit={this.handleSubmit}>
           <FormInput
@@ -40,7 +39,7 @@ class SignIn extends React.Component {
             name="email"
             handleChange={this.handleChange}
             value={this.state.email}
-            label="email"
+            label="Email"
             required
           />
           <FormInput
@@ -48,7 +47,7 @@ class SignIn extends React.Component {
             name="password"
             handleChange={this.handleChange}
             value={this.state.password}
-            label="password"
+            label="Password"
             required
           />
           <div className="buttons">
